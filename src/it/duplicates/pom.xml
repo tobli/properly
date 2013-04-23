@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>localhost</groupId>
+	<artifactId>duplicates</artifactId>
+	<version>1.0</version>
+	<name>Duplicates</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.2</version>
+				<dependencies>
+					<dependency>
+						<groupId>@project.groupId@</groupId>
+						<artifactId>@project.artifactId@</artifactId>
+						<version>@project.version@</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<rules>
+						<properly implementation="se.lidskog.maven.properly.Properly"/>
+					</rules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
